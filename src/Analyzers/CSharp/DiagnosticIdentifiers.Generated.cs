@@ -218,6 +218,6 @@ namespace Roslynator.CSharp
         public const string DuplicateEnumValue = "RCS1234";
         public const string OptimizeMethodCall = "RCS1235";
         public const string UseExceptionFilter = "RCS1236";
-        public const string UseBitShiftOperator = "RCS1244";
+        public const string UseBitShiftOperator = "RCS1237";
     }
 }
