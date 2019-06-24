@@ -278,5 +278,37 @@ class C
 }
 ");
         }
+
+        [Fact, Trait(Traits.Analyzer, DiagnosticIdentifiers.RemoveUnusedMemberDeclaration)]
+        public async Task TestNoDiagnostic_StructLayoutAttribute()
+        {
+            await VerifyNoDiagnosticAsync(@"
+using System.Runtime.InteropServices;
+
+[StructLayout(LayoutKind.Sequential)]
+struct S
+{
+    private int F;
+}
+");
+        }
+
+        [Fact, Trait(Traits.Analyzer, DiagnosticIdentifiers.RemoveUnusedMemberDeclaration)]
+        public async Task TestNoDiagnostic_DelegateAsTypeArgument()
+        {
+            await VerifyNoDiagnosticAsync(@"
+using System.Collections.Generic;
+
+class C
+{
+    private delegate string D(int value);
+
+    public void M()
+    {
+        var x = new Dictionary<string, D>();
+    }
+}
+");
+        }
     }
 }

@@ -52,7 +52,7 @@ namespace Roslynator.CSharp.CodeFixes
                     case DiagnosticIdentifiers.AddNewLineBeforeEnumMember:
                         {
                             CodeAction codeAction = CodeAction.Create(
-                                "Add new line",
+                                "Add newline",
                                 cancellationToken => AddNewLineBeforeEnumMemberRefactoring.RefactorAsync(document, enumDeclaration, cancellationToken),
                                 base.GetEquivalenceKey(diagnostic));
 
