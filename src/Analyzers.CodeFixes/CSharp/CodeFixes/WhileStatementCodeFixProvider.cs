@@ -9,7 +9,6 @@ using Microsoft.CodeAnalysis.CodeActions;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Roslynator.CodeFixes;
-using Roslynator.CSharp.Refactorings;
 using Roslynator.CSharp.Syntax;
 
 namespace Roslynator.CSharp.CodeFixes
@@ -44,13 +43,13 @@ namespace Roslynator.CSharp.CodeFixes
                 case DiagnosticIdentifiers.AvoidUsageOfWhileStatementToCreateInfiniteLoop:
                     {
                         CodeAction codeAction = CodeAction.Create(
-                            "Use for to create an infinite loop",
+                            "Convert to 'for'",
                             ct =>
                             {
-                                return AvoidUsageOfWhileStatementToCreateInfiniteLoopRefactoring.RefactorAsync(
-                                    document,
-                                    whileStatement,
-                                    ct);
+                                ForStatementSyntax forStatement = SyntaxRefactorings.ConvertWhileStatementToForStatement(whileStatement)
+                                    .WithFormatterAnnotation();
+
+                                return document.ReplaceNodeAsync(whileStatement, forStatement, ct);
                             },
                             GetEquivalenceKey(diagnostic));
 
@@ -60,10 +59,10 @@ namespace Roslynator.CSharp.CodeFixes
                 case DiagnosticIdentifiers.UseForStatementInsteadOfWhileStatement:
                     {
                         CodeAction codeAction = CodeAction.Create(
-                            "Use for to create an infinite loop",
+                            "Convert to 'for'",
                             ct =>
                             {
-                                return UseForInsteadOfWhileAsync(
+                                return ConvertWhileStatementToForStatementAsync(
                                     document,
                                     whileStatement,
                                     ct);
@@ -76,7 +75,7 @@ namespace Roslynator.CSharp.CodeFixes
             }
         }
 
-        private static Task<Document> UseForInsteadOfWhileAsync(
+        private static Task<Document> ConvertWhileStatementToForStatementAsync(
             Document document,
             WhileStatementSyntax whileStatement,
             CancellationToken cancellationToken)
