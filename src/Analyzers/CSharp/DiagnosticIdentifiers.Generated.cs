@@ -219,6 +219,6 @@ namespace Roslynator.CSharp
         public const string OptimizeMethodCall = "RCS1235";
         public const string UseExceptionFilter = "RCS1236";
         public const string UseBitShiftOperator = "RCS1237";
-        public const string UnnecessaryRelationalOperator = "RCS1240";
+        public const string UnnecessaryRelationalOperator = "RCS1238";
     }
 }

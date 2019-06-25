@@ -5367,4 +5367,20 @@ enum Foo
       </Sample>
     </Samples>
   </Analyzer>
+  <Analyzer Identifier="UnnecessaryRelationalOperator">
+    <Id>RCS1238</Id>
+    <Title>Unnecessary relational operator.</Title>
+    <MessageFormat>Unnecessary relational operator.</MessageFormat>
+    <Category>Simplification</Category>
+    <DefaultSeverity>Info</DefaultSeverity>
+    <IsEnabledByDefault>true</IsEnabledByDefault>
+    <SupportsFadeOut>true</SupportsFadeOut>
+    <SupportsFadeOutAnalyzer>false</SupportsFadeOutAnalyzer>
+    <Samples>
+      <Sample>
+        <Before><![CDATA[array.Length <= 0 [|Id|]]]></Before>
+        <After><![CDATA[array.Length == 0]]></After>
+      </Sample>
+    </Samples>
+  </Analyzer>
 </Analyzers>

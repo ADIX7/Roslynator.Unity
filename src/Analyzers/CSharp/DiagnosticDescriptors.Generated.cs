@@ -2595,7 +2595,7 @@ namespace Roslynator.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UseBitShiftOperator}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>RCS1240</summary>
+        /// <summary>RCS1238</summary>
         public static readonly DiagnosticDescriptor UnnecessaryRelationalOperator = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.UnnecessaryRelationalOperator, 
             title:              "Unnecessary relational operator.", 
