@@ -35,7 +35,9 @@ namespace Roslynator
                         CreateFromAssemblyName("System.Runtime.dll"),
                         CreateFromAssemblyName("System.Collections.dll"),
                         CreateFromAssemblyName("System.Collections.Immutable.dll"),
+                        CreateFromAssemblyName("System.ObjectModel.dll"),
                         CreateFromAssemblyName("System.Text.RegularExpressions.dll"),
+                        CreateFromAssemblyName("System.Threading.Tasks.Extensions.dll"),
                         CreateFromAssemblyName("Microsoft.CodeAnalysis.dll"),
                         CreateFromAssemblyName("Microsoft.CodeAnalysis.CSharp.dll"));
                 }
