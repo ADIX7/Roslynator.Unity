@@ -11,8 +11,6 @@ namespace Roslynator.CSharp
         [Obsolete("", error: true)]
         public const string SimplifyLambdaExpressionParameterList = "RCS1022";
         [Obsolete("", error: true)]
-        public const string RemoveRedundantBraces = "RCS1031";
-        [Obsolete("", error: true)]
         public const string ReplaceForEachWithFor = "RCS1053";
         [Obsolete("", error: true)]
         public const string MergeLocalDeclarationWithReturnStatement = "RCS1054";
@@ -53,8 +51,12 @@ namespace Roslynator.CSharp
         [Obsolete("", error: true)]
         public const string RemoveImplementationFromAbstractMember = "RCS1149";
         [Obsolete("", error: true)]
+        public const string CallStringConcatInsteadOfStringJoin = "RCS1150";
+        [Obsolete("", error: true)]
         public const string MemberTypeMustMatchOverriddenMemberType = "RCS1152";
         [Obsolete("", error: true)]
         public const string OverridingMemberCannotChangeAccessModifiers = "RCS1167";
+        [Obsolete("", error: true)]
+        public const string CallDebugFailInsteadOfDebugAssert = "RCS1178";
     }
 }

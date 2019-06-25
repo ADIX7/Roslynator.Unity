@@ -39,12 +39,14 @@ namespace Roslynator.CSharp.Refactorings
         public const string CollapseToInitializer = Prefix + "0026";
         public const string CommentOutMember = Prefix + "0027";
         public const string CommentOutStatement = Prefix + "0028";
+        public const string ConvertCommentToDocumentationComment = Prefix + "0192";
         public const string ConvertStatementsToIfElse = Prefix + "0211";
         public const string CopyDocumentationCommentFromBaseMember = Prefix + "0029";
         public const string DuplicateArgument = Prefix + "0030";
         public const string DuplicateMember = Prefix + "0031";
         public const string DuplicateParameter = Prefix + "0032";
         public const string DuplicateStatement = Prefix + "0033";
+        public const string DuplicateSwitchSection = Prefix + "0212";
         public const string ExpandCoalesceExpression = Prefix + "0035";
         public const string ExpandCompoundAssignmentOperator = Prefix + "0034";
         public const string ExpandEvent = Prefix + "0036";
@@ -106,7 +108,7 @@ namespace Roslynator.CSharp.Refactorings
         public const string MergeIfWithParentIf = Prefix + "0196";
         public const string MergeLocalDeclarations = Prefix + "0077";
         public const string MoveUnsafeContextToContainingDeclaration = Prefix + "0202";
-        public const string NotifyPropertyChanged = Prefix + "0083";
+        public const string NotifyWhenPropertyChange = Prefix + "0083";
         public const string ParenthesizeExpression = Prefix + "0084";
         public const string PromoteLocalToParameter = Prefix + "0085";
         public const string RemoveAllComments = Prefix + "0086";
@@ -143,7 +145,6 @@ namespace Roslynator.CSharp.Refactorings
         public const string RenamePropertyAccordingToTypeName = Prefix + "0115";
         public const string ReplaceAsWithCast = Prefix + "0117";
         public const string ReplaceCastWithAs = Prefix + "0118";
-        public const string ReplaceCommentWithDocumentationComment = Prefix + "0192";
         public const string ReplaceConditionalExpressionWithExpression = Prefix + "0119";
         public const string ReplaceConditionalExpressionWithIfElse = Prefix + "0120";
         public const string ReplaceConstantWithField = Prefix + "0121";
