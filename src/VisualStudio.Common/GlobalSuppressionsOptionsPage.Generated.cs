@@ -14,7 +14,7 @@ namespace Roslynator.VisualStudio
             get;
         }
 
-        = "RCS1234";
+        = "RCS1238";
         protected override void Fill(ICollection<BaseModel> analyzers)
         {
             analyzers.Clear();
@@ -46,6 +46,7 @@ namespace Roslynator.VisualStudio
             analyzers.Add(new BaseModel("RCS1028", "Add new line after switch label.", !IsEnabled("RCS1028")));
             analyzers.Add(new BaseModel("RCS1029", "Format binary operator on next line.", !IsEnabled("RCS1029")));
             analyzers.Add(new BaseModel("RCS1030", "Add empty line after embedded statement.", !IsEnabled("RCS1030")));
+            analyzers.Add(new BaseModel("RCS1031", "Remove unnecessary braces.", !IsEnabled("RCS1031")));
             analyzers.Add(new BaseModel("RCS1032", "Remove redundant parentheses.", !IsEnabled("RCS1032")));
             analyzers.Add(new BaseModel("RCS1033", "Remove redundant boolean literal.", !IsEnabled("RCS1033")));
             analyzers.Add(new BaseModel("RCS1034", "Remove redundant 'sealed' modifier.", !IsEnabled("RCS1034")));
@@ -144,7 +145,6 @@ namespace Roslynator.VisualStudio
             analyzers.Add(new BaseModel("RCS1143", "Simplify coalesce expression.", !IsEnabled("RCS1143")));
             analyzers.Add(new BaseModel("RCS1145", "Remove redundant 'as' operator.", !IsEnabled("RCS1145")));
             analyzers.Add(new BaseModel("RCS1146", "Use conditional access.", !IsEnabled("RCS1146")));
-            analyzers.Add(new BaseModel("RCS1150", "Call string.Concat instead of string.Join.", !IsEnabled("RCS1150")));
             analyzers.Add(new BaseModel("RCS1151", "Remove redundant cast.", !IsEnabled("RCS1151")));
             analyzers.Add(new BaseModel("RCS1153", "Add empty line after closing brace.", !IsEnabled("RCS1153")));
             analyzers.Add(new BaseModel("RCS1154", "Sort enum members.", !IsEnabled("RCS1154")));
@@ -161,7 +161,7 @@ namespace Roslynator.VisualStudio
             analyzers.Add(new BaseModel("RCS1165", "Unconstrained type parameter checked for null.", !IsEnabled("RCS1165")));
             analyzers.Add(new BaseModel("RCS1166", "Value type object is never equal to null.", !IsEnabled("RCS1166")));
             analyzers.Add(new BaseModel("RCS1168", "Parameter name differs from base name.", !IsEnabled("RCS1168")));
-            analyzers.Add(new BaseModel("RCS1169", "Mark field as read-only.", !IsEnabled("RCS1169")));
+            analyzers.Add(new BaseModel("RCS1169", "Make field read-only.", !IsEnabled("RCS1169")));
             analyzers.Add(new BaseModel("RCS1170", "Use read-only auto-implemented property.", !IsEnabled("RCS1170")));
             analyzers.Add(new BaseModel("RCS1171", "Simplify lazy initialization.", !IsEnabled("RCS1171")));
             analyzers.Add(new BaseModel("RCS1172", "Use 'is' operator instead of 'as' operator.", !IsEnabled("RCS1172")));
@@ -170,10 +170,9 @@ namespace Roslynator.VisualStudio
             analyzers.Add(new BaseModel("RCS1175", "Unused this parameter.", !IsEnabled("RCS1175")));
             analyzers.Add(new BaseModel("RCS1176", "Use 'var' instead of explicit type (when the type is not obvious).", !IsEnabled("RCS1176")));
             analyzers.Add(new BaseModel("RCS1177", "Use 'var' instead of explicit type (in foreach).", !IsEnabled("RCS1177")));
-            analyzers.Add(new BaseModel("RCS1178", "Call Debug.Fail instead of Debug.Assert.", !IsEnabled("RCS1178")));
             analyzers.Add(new BaseModel("RCS1179", "Use return instead of assignment.", !IsEnabled("RCS1179")));
             analyzers.Add(new BaseModel("RCS1180", "Inline lazy initialization.", !IsEnabled("RCS1180")));
-            analyzers.Add(new BaseModel("RCS1181", "Replace comment with documentation comment.", !IsEnabled("RCS1181")));
+            analyzers.Add(new BaseModel("RCS1181", "Convert comment to documentation comment.", !IsEnabled("RCS1181")));
             analyzers.Add(new BaseModel("RCS1182", "Remove redundant base interface.", !IsEnabled("RCS1182")));
             analyzers.Add(new BaseModel("RCS1183", "Format initializer with single expression on single line.", !IsEnabled("RCS1183")));
             analyzers.Add(new BaseModel("RCS1184", "Format conditional expression (format ? and : on next line).", !IsEnabled("RCS1184")));
@@ -227,7 +226,10 @@ namespace Roslynator.VisualStudio
             analyzers.Add(new BaseModel("RCS1232", "Order elements in documentation comment.", !IsEnabled("RCS1232")));
             analyzers.Add(new BaseModel("RCS1233", "Use short-circuiting operator.", !IsEnabled("RCS1233")));
             analyzers.Add(new BaseModel("RCS1234", "Duplicate enum value.", !IsEnabled("RCS1234")));
-            analyzers.Add(new BaseModel(DiagnosticIdentifiers.ImplementNonGenericCounterpart, "Implement non-generic counterpart.", !IsEnabled(DiagnosticIdentifiers.ImplementNonGenericCounterpart)));
+            analyzers.Add(new BaseModel("RCS1235", "Optimize method call.", !IsEnabled("RCS1235")));
+            analyzers.Add(new BaseModel("RCS1236", "Use exception filter.", !IsEnabled("RCS1236")));
+            analyzers.Add(new BaseModel("RCS1237", "Use bit shift operator.", !IsEnabled("RCS1237")));
+            analyzers.Add(new BaseModel("RCS1238", "Implement non-generic counterpart.", !IsEnabled("RCS1238")));
         }
     }
 }
