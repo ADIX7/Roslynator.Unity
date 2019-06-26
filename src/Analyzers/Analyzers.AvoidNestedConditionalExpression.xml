@@ -5,35 +5,27 @@
     <Title>Avoid nested conditional expressions.</Title>
     <MessageFormat>Avoid nested conditional expressions.</MessageFormat>
     <Category>Readability</Category>
-    <DefaultSeverity>Info</DefaultSeverity>
+    <DefaultSeverity>Hidden</DefaultSeverity>
     <IsEnabledByDefault>true</IsEnabledByDefault>
     <SupportsFadeOut>false</SupportsFadeOut>
     <SupportsFadeOutAnalyzer>false</SupportsFadeOutAnalyzer>
-    <Summary></Summary>
     <Samples>
       <Sample>
-        <Before><![CDATA[string s = (x) ? "a" : (y) ? "b" : "c";]]></Before>
-        <After><![CDATA[string s;
-if (x)
+        <Before><![CDATA[var x = (a) ? "a" : (b) ? "b" : "c";]]></Before>
+        <After><![CDATA[var x;
+if (a)
 {
-    s = "a";
+    x = "a";
 }
-else if (y)
+else if (b)
 {
-    s = "b";
+    x = "b";
 }
 else
 {
-    s = "c";
+    x = "c";
 }]]></After>
       </Sample>
     </Samples>
-    <Remarks></Remarks>
-    <Links>
-      <Link>
-        <Url></Url>
-        <Text></Text>
-      </Link>
-    </Links>
   </Analyzer>
 </Analyzers>
