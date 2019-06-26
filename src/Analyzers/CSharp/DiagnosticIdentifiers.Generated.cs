@@ -36,6 +36,7 @@ namespace Roslynator.CSharp
         public const string AddNewLineAfterSwitchLabel = "RCS1028";
         public const string FormatBinaryOperatorOnNextLine = "RCS1029";
         public const string AddEmptyLineAfterEmbeddedStatement = "RCS1030";
+        public const string RemoveUnnecessaryBraces = "RCS1031";
         public const string RemoveRedundantParentheses = "RCS1032";
         public const string RemoveRedundantBooleanLiteral = "RCS1033";
         public const string RemoveRedundantSealedModifier = "RCS1034";
@@ -134,7 +135,6 @@ namespace Roslynator.CSharp
         public const string SimplifyCoalesceExpression = "RCS1143";
         public const string RemoveRedundantAsOperator = "RCS1145";
         public const string UseConditionalAccess = "RCS1146";
-        public const string CallStringConcatInsteadOfStringJoin = "RCS1150";
         public const string RemoveRedundantCast = "RCS1151";
         public const string AddEmptyLineAfterClosingBrace = "RCS1153";
         public const string SortEnumMembers = "RCS1154";
@@ -151,7 +151,7 @@ namespace Roslynator.CSharp
         public const string UnconstrainedTypeParameterCheckedForNull = "RCS1165";
         public const string ValueTypeObjectIsNeverEqualToNull = "RCS1166";
         public const string ParameterNameDiffersFromBase = "RCS1168";
-        public const string MarkFieldAsReadOnly = "RCS1169";
+        public const string MakeFieldReadOnly = "RCS1169";
         public const string UseReadOnlyAutoProperty = "RCS1170";
         public const string SimplifyLazyInitialization = "RCS1171";
         public const string UseIsOperatorInsteadOfAsOperator = "RCS1172";
@@ -160,10 +160,9 @@ namespace Roslynator.CSharp
         public const string UnusedThisParameter = "RCS1175";
         public const string UseVarInsteadOfExplicitTypeWhenTypeIsNotObvious = "RCS1176";
         public const string UseVarInsteadOfExplicitTypeInForEach = "RCS1177";
-        public const string CallDebugFailInsteadOfDebugAssert = "RCS1178";
         public const string UseReturnInsteadOfAssignment = "RCS1179";
         public const string InlineLazyInitialization = "RCS1180";
-        public const string ReplaceCommentWithDocumentationComment = "RCS1181";
+        public const string ConvertCommentToDocumentationComment = "RCS1181";
         public const string RemoveRedundantBaseInterface = "RCS1182";
         public const string FormatInitializerWithSingleExpressionOnSingleLine = "RCS1183";
         public const string FormatConditionalExpression = "RCS1184";
@@ -217,6 +216,9 @@ namespace Roslynator.CSharp
         public const string OrderElementsInDocumentationComment = "RCS1232";
         public const string UseShortCircuitingOperator = "RCS1233";
         public const string DuplicateEnumValue = "RCS1234";
-        public const string AvoidNestedConditionalExpressions = "RCS1235Dev";
+        public const string OptimizeMethodCall = "RCS1235";
+        public const string UseExceptionFilter = "RCS1236";
+        public const string UseBitShiftOperator = "RCS1237";
+        public const string AvoidNestedConditionalExpressions = "RCS1238";
     }
 }

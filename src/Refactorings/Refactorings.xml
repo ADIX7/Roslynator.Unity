@@ -656,9 +656,9 @@ return true;]]></After>
       <Syntax>&gt;=</Syntax>
     </Syntaxes>
   </Refactoring>
-  <Refactoring Id="RR0083" Identifier="NotifyPropertyChanged" Title="Notify property changed">
+  <Refactoring Id="RR0083" Identifier="NotifyWhenPropertyChange" Title="Notify when property change">
     <Syntaxes>
-      <Syntax>property in class/struct that implements INotifyPropertyChanged</Syntax>
+      <Syntax>property in class/struct that implements System.ComponentModel.INotifyPropertyChanged</Syntax>
     </Syntaxes>
     <Span>setter</Span>
   </Refactoring>
@@ -878,11 +878,29 @@ return true;]]></After>
       <Syntax>property identifier</Syntax>
     </Syntaxes>
   </Refactoring>
-  <Refactoring Id="RR0116" Identifier="ReplaceAnyWithAllOrAllWithAny" Title="Replace Any with All (or All with Any)">
+  <Refactoring Id="RR0116" Identifier="InvertLinqMethodCall" Title="Invert LINQ method call">
     <Syntaxes>
-      <Syntax>Any(Func&lt;T, bool&gt; or All(Func&lt;T, bool&gt; from System.Linq.Enumerable namespace</Syntax>
+      <Syntax>System.Linq.Enumerable.Any(Func&lt;T, bool&gt;) or System.Linq.Enumerable.All(Func&lt;T, bool&gt;)</Syntax>
     </Syntaxes>
     <Span>method name</Span>
+    <Samples>
+      <Sample>
+        <Before><![CDATA[if (items.Any(predicate)
+{
+}]]></Before>
+        <After><![CDATA[if (items.All(!predicate)
+{
+}]]></After>
+      </Sample>
+      <Sample>
+        <Before><![CDATA[if (items.All(predicate)
+{
+}]]></Before>
+        <After><![CDATA[if (items.Any(!predicate)
+{
+}]]></After>
+      </Sample>
+    </Samples>
   </Refactoring>
   <Refactoring Id="RR0117" Identifier="ReplaceAsWithCast" Title="Replace as expression with cast expression">
     <Syntaxes>
@@ -1295,7 +1313,7 @@ i--;]]></After>
     </Syntaxes>
     <Span>if keyword</Span>
   </Refactoring>
-  <Refactoring Id="RR0163" Identifier="UncommentSingleLineComment" Title="UncommentSingleLineComment">
+  <Refactoring Id="RR0163" Identifier="UncommentSingleLineComment" Title="Uncomment single-line comment">
     <Syntaxes>
       <Syntax>single-line comment(s)</Syntax>
     </Syntaxes>
@@ -1568,7 +1586,7 @@ return false;]]></After>
       </Sample>
     </Samples>
   </Refactoring>
-  <Refactoring Id="RR0192" Identifier="ReplaceCommentWithDocumentationComment" Title="Replace comment with documentation comment">
+  <Refactoring Id="RR0192" Identifier="ConvertCommentToDocumentationComment" Title="Convert comment to documentation comment">
     <Syntaxes>
       <Syntax>single-line comment</Syntax>
     </Syntaxes>
@@ -2137,6 +2155,52 @@ else
 {
     return 0;
 }]]></After>
+      </Sample>
+    </Samples>
+  </Refactoring>
+  <Refactoring Id="RR0212" Identifier="DuplicateSwitchSection" Title="Duplicate switch section">
+    <Syntaxes>
+      <Syntax>switch section</Syntax>
+    </Syntaxes>
+    <Span>close brace or empty line after switch section</Span>
+    <Samples>
+      <Sample>
+        <Before>
+          <![CDATA[switch (s)
+{
+    case "a":
+        {
+            // ...
+
+            break;
+        }
+    default:
+        {
+            break;
+        }
+}]]>
+        </Before>
+        <After>
+          <![CDATA[switch (s)
+{
+    case "a":
+        {
+            // ...
+
+            break;
+        }
+    case "a":
+        {
+            // ...
+
+            break;
+        }
+    default:
+        {
+            break;
+        }
+}]]>
+        </After>
       </Sample>
     </Samples>
   </Refactoring>
