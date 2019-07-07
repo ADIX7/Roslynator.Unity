@@ -9,7 +9,19 @@ namespace Roslynator.CodeAnalysis.CSharp
 {
     public static partial class DiagnosticDescriptors
     {
-        /// <summary>ROS0001</summary>
+        /// <summary>RCS9001</summary>
+        public static readonly DiagnosticDescriptor UsePatternMatching = new DiagnosticDescriptor(
+            id:                 DiagnosticIdentifiers.UsePatternMatching, 
+            title:              "Use pattern matching.", 
+            messageFormat:      "Use pattern matching.", 
+            category:           DiagnosticCategories.Usage, 
+            defaultSeverity:    DiagnosticSeverity.Hidden, 
+            isEnabledByDefault: true, 
+            description:        null, 
+            helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UsePatternMatching}", 
+            customTags:         Array.Empty<string>());
+
+        /// <summary>RCS9002</summary>
         public static readonly DiagnosticDescriptor UsePropertySyntaxNodeSpanStart = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.UsePropertySyntaxNodeSpanStart, 
             title:              "Use property SyntaxNode.SpanStart.", 
@@ -21,19 +33,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UsePropertySyntaxNodeSpanStart}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>ROS0002</summary>
-        public static readonly DiagnosticDescriptor UsePropertySyntaxNodeRawKind = new DiagnosticDescriptor(
-            id:                 DiagnosticIdentifiers.UsePropertySyntaxNodeRawKind, 
-            title:              "Use property SyntaxNode.RawKind.", 
-            messageFormat:      "Use property SyntaxNode.RawKind.", 
-            category:           DiagnosticCategories.Performance, 
-            defaultSeverity:    DiagnosticSeverity.Info, 
-            isEnabledByDefault: true, 
-            description:        null, 
-            helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UsePropertySyntaxNodeRawKind}", 
-            customTags:         Array.Empty<string>());
-
-        /// <summary>ROS0003</summary>
+        /// <summary>RCS9003</summary>
         public static readonly DiagnosticDescriptor UnnecessaryConditionalAccess = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.UnnecessaryConditionalAccess, 
             title:              "Unnecessary conditional access.", 
@@ -47,19 +47,7 @@ namespace Roslynator.CodeAnalysis.CSharp
 
         public static readonly DiagnosticDescriptor UnnecessaryConditionalAccessFadeOut = UnnecessaryConditionalAccess.CreateFadeOut();
 
-        /// <summary>ROS0004</summary>
-        public static readonly DiagnosticDescriptor UsePatternMatching = new DiagnosticDescriptor(
-            id:                 DiagnosticIdentifiers.UsePatternMatching, 
-            title:              "Use pattern matching.", 
-            messageFormat:      "Use pattern matching.", 
-            category:           DiagnosticCategories.Usage, 
-            defaultSeverity:    DiagnosticSeverity.Hidden, 
-            isEnabledByDefault: true, 
-            description:        null, 
-            helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UsePatternMatching}", 
-            customTags:         Array.Empty<string>());
-
-        /// <summary>ROS0005</summary>
+        /// <summary>RCS9004</summary>
         public static readonly DiagnosticDescriptor CallAnyInsteadOfAccessingCount = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.CallAnyInsteadOfAccessingCount, 
             title:              "Call 'Any' instead of accessing 'Count'.", 
@@ -71,7 +59,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.CallAnyInsteadOfAccessingCount}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>ROS0006</summary>
+        /// <summary>RCS9005</summary>
         public static readonly DiagnosticDescriptor UnnecessaryNullCheck = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.UnnecessaryNullCheck, 
             title:              "Unnecessary null check.", 
@@ -83,7 +71,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UnnecessaryNullCheck}", 
             customTags:         WellKnownDiagnosticTags.Unnecessary);
 
-        /// <summary>ROS0007</summary>
+        /// <summary>RCS9006</summary>
         public static readonly DiagnosticDescriptor UseElementAccess = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.UseElementAccess, 
             title:              "Use element access.", 
@@ -95,7 +83,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UseElementAccess}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>ROS0008</summary>
+        /// <summary>RCS9007</summary>
         public static readonly DiagnosticDescriptor UseReturnValue = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.UseReturnValue, 
             title:              "Use return value.", 
@@ -107,7 +95,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UseReturnValue}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>ROS0009</summary>
+        /// <summary>RCS9008</summary>
         public static readonly DiagnosticDescriptor CallLastInsteadOfUsingElementAccess = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.CallLastInsteadOfUsingElementAccess, 
             title:              "Call 'Last' instead of using [].", 
@@ -119,7 +107,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.CallLastInsteadOfUsingElementAccess}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>ROS0010</summary>
+        /// <summary>RCS9009</summary>
         public static readonly DiagnosticDescriptor UnknownLanguageName = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.UnknownLanguageName, 
             title:              "Unknown language name.", 
@@ -131,7 +119,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UnknownLanguageName}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>ROS0011</summary>
+        /// <summary>RCS9010</summary>
         public static readonly DiagnosticDescriptor SpecifyExportCodeRefactoringProviderAttributeName = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.SpecifyExportCodeRefactoringProviderAttributeName, 
             title:              "Specify ExportCodeRefactoringProviderAttribute.Name.", 
@@ -143,7 +131,7 @@ namespace Roslynator.CodeAnalysis.CSharp
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.SpecifyExportCodeRefactoringProviderAttributeName}", 
             customTags:         Array.Empty<string>());
 
-        /// <summary>ROS0012</summary>
+        /// <summary>RCS9011</summary>
         public static readonly DiagnosticDescriptor SpecifyExportCodeFixProviderAttributeName = new DiagnosticDescriptor(
             id:                 DiagnosticIdentifiers.SpecifyExportCodeFixProviderAttributeName, 
             title:              "Specify ExportCodeFixProviderAttribute.Name.", 
@@ -153,6 +141,18 @@ namespace Roslynator.CodeAnalysis.CSharp
             isEnabledByDefault: true, 
             description:        null, 
             helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.SpecifyExportCodeFixProviderAttributeName}", 
+            customTags:         Array.Empty<string>());
+
+        /// <summary>RCS9012</summary>
+        public static readonly DiagnosticDescriptor UsePropertySyntaxNodeRawKind = new DiagnosticDescriptor(
+            id:                 DiagnosticIdentifiers.UsePropertySyntaxNodeRawKind, 
+            title:              "Use property SyntaxNode.RawKind.", 
+            messageFormat:      "Use property SyntaxNode.RawKind.", 
+            category:           DiagnosticCategories.Performance, 
+            defaultSeverity:    DiagnosticSeverity.Info, 
+            isEnabledByDefault: true, 
+            description:        null, 
+            helpLinkUri:        $"{HelpLinkUriRoot}{DiagnosticIdentifiers.UsePropertySyntaxNodeRawKind}", 
             customTags:         Array.Empty<string>());
 
     }

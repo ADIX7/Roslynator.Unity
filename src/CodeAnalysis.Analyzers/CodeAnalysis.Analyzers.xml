@@ -1,59 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Analyzers>
-  <Analyzer Identifier="UsePropertySyntaxNodeSpanStart">
-    <Id>ROS0001</Id>
-    <Title>Use property SyntaxNode.SpanStart.</Title>
-    <MessageFormat>Use property SyntaxNode.SpanStart.</MessageFormat>
-    <Category>Performance</Category>
-    <DefaultSeverity>Info</DefaultSeverity>
-    <IsEnabledByDefault>true</IsEnabledByDefault>
-    <SupportsFadeOut>false</SupportsFadeOut>
-    <SupportsFadeOutAnalyzer>false</SupportsFadeOutAnalyzer>
-    <Samples>
-      <Sample>
-        <Before><![CDATA[node.Span.Start // [|Id|]]]></Before>
-        <After><![CDATA[node.SpanStart]]></After>
-      </Sample>
-    </Samples>
-  </Analyzer>
-  <Analyzer Identifier="UsePropertySyntaxNodeRawKind">
-    <Id>ROS0002</Id>
-    <Title>Use property SyntaxNode.RawKind.</Title>
-    <MessageFormat>Use property SyntaxNode.RawKind.</MessageFormat>
-    <Category>Performance</Category>
-    <DefaultSeverity>Info</DefaultSeverity>
-    <IsEnabledByDefault>true</IsEnabledByDefault>
-    <SupportsFadeOut>false</SupportsFadeOut>
-    <SupportsFadeOutAnalyzer>false</SupportsFadeOutAnalyzer>
-    <Samples>
-      <Sample>
-        <Before><![CDATA[node1.Kind() == node2.Kind() // [|Id|]]]></Before>
-        <After><![CDATA[node1.RawKind == node2.RawKind]]></After>
-      </Sample>
-      <Sample>
-        <Before><![CDATA[node1.IsKind(node2.Kind()) // [|Id|]]]></Before>
-        <After><![CDATA[node1?.RawKind == node2.RawKind]]></After>
-      </Sample>
-    </Samples>
-  </Analyzer>
-  <Analyzer Identifier="UnnecessaryConditionalAccess">
-    <Id>ROS0003</Id>
-    <Title>Unnecessary conditional access.</Title>
-    <MessageFormat>Unnecessary conditional access.</MessageFormat>
-    <Category>Performance</Category>
-    <DefaultSeverity>Info</DefaultSeverity>
-    <IsEnabledByDefault>true</IsEnabledByDefault>
-    <SupportsFadeOut>true</SupportsFadeOut>
-    <SupportsFadeOutAnalyzer>true</SupportsFadeOutAnalyzer>
-    <Samples>
-      <Sample>
-        <Before><![CDATA[node?.IsKind(kind) == true // [|Id|]]]></Before>
-        <After><![CDATA[node.IsKind(kind)]]></After>
-      </Sample>
-    </Samples>
-  </Analyzer>
   <Analyzer Identifier="UsePatternMatching">
-    <Id>ROS0004</Id>
+    <Id>RCS9001</Id>
     <Title>Use pattern matching.</Title>
     <MessageFormat>Use pattern matching.</MessageFormat>
     <Category>Usage</Category>
@@ -86,8 +34,40 @@ var identifierName = (IdentifierNameSyntax)syntaxNode;
       </Sample>
     </Samples>
   </Analyzer>
+  <Analyzer Identifier="UsePropertySyntaxNodeSpanStart">
+    <Id>RCS9002</Id>
+    <Title>Use property SyntaxNode.SpanStart.</Title>
+    <MessageFormat>Use property SyntaxNode.SpanStart.</MessageFormat>
+    <Category>Performance</Category>
+    <DefaultSeverity>Info</DefaultSeverity>
+    <IsEnabledByDefault>true</IsEnabledByDefault>
+    <SupportsFadeOut>false</SupportsFadeOut>
+    <SupportsFadeOutAnalyzer>false</SupportsFadeOutAnalyzer>
+    <Samples>
+      <Sample>
+        <Before><![CDATA[node.Span.Start // [|Id|]]]></Before>
+        <After><![CDATA[node.SpanStart]]></After>
+      </Sample>
+    </Samples>
+  </Analyzer>
+  <Analyzer Identifier="UnnecessaryConditionalAccess">
+    <Id>RCS9003</Id>
+    <Title>Unnecessary conditional access.</Title>
+    <MessageFormat>Unnecessary conditional access.</MessageFormat>
+    <Category>Performance</Category>
+    <DefaultSeverity>Info</DefaultSeverity>
+    <IsEnabledByDefault>true</IsEnabledByDefault>
+    <SupportsFadeOut>true</SupportsFadeOut>
+    <SupportsFadeOutAnalyzer>true</SupportsFadeOutAnalyzer>
+    <Samples>
+      <Sample>
+        <Before><![CDATA[node?.IsKind(kind) == true // [|Id|]]]></Before>
+        <After><![CDATA[node.IsKind(kind)]]></After>
+      </Sample>
+    </Samples>
+  </Analyzer>
   <Analyzer Identifier="CallAnyInsteadOfAccessingCount">
-    <Id>ROS0005</Id>
+    <Id>RCS9004</Id>
     <Title>Call 'Any' instead of accessing 'Count'.</Title>
     <MessageFormat>Call 'Any' instead of accessing 'Count'.</MessageFormat>
     <Category>Performance</Category>
@@ -114,7 +94,7 @@ var identifierName = (IdentifierNameSyntax)syntaxNode;
 * `Microsoft.CodeAnalysis.SyntaxTriviaList`</Remarks>
   </Analyzer>
   <Analyzer Identifier="UnnecessaryNullCheck">
-    <Id>ROS0006</Id>
+    <Id>RCS9005</Id>
     <Title>Unnecessary null check.</Title>
     <MessageFormat>Unnecessary null check.</MessageFormat>
     <Category>Performance</Category>
@@ -130,7 +110,7 @@ var identifierName = (IdentifierNameSyntax)syntaxNode;
     </Samples>
   </Analyzer>
   <Analyzer Identifier="UseElementAccess">
-    <Id>ROS0007</Id>
+    <Id>RCS9006</Id>
     <Title>Use element access.</Title>
     <MessageFormat>Use element access.</MessageFormat>
     <Category>Usage</Category>
@@ -157,7 +137,7 @@ var identifierName = (IdentifierNameSyntax)syntaxNode;
 * `Microsoft.CodeAnalysis.SyntaxTriviaList`</Remarks>
   </Analyzer>
   <Analyzer Identifier="UseReturnValue">
-    <Id>ROS0008</Id>
+    <Id>RCS9007</Id>
     <Title>Use return value.</Title>
     <MessageFormat>Use return value.</MessageFormat>
     <Category>Usage</Category>
@@ -173,7 +153,7 @@ var identifierName = (IdentifierNameSyntax)syntaxNode;
     </Samples>
   </Analyzer>
   <Analyzer Identifier="CallLastInsteadOfUsingElementAccess">
-    <Id>ROS0009</Id>
+    <Id>RCS9008</Id>
     <Title>Call 'Last' instead of using [].</Title>
     <MessageFormat>Call 'Last' instead of using [].</MessageFormat>
     <Category>Usage</Category>
@@ -196,7 +176,7 @@ var identifierName = (IdentifierNameSyntax)syntaxNode;
 * `Microsoft.CodeAnalysis.SyntaxTriviaList`</Remarks>
   </Analyzer>
   <Analyzer Identifier="UnknownLanguageName">
-    <Id>ROS0010</Id>
+    <Id>RCS9009</Id>
     <Title>Unknown language name.</Title>
     <MessageFormat>Unknown language name.</MessageFormat>
     <Category>General</Category>
@@ -218,7 +198,7 @@ class FooDiagnosticAnalyzer : DiagnosticAnalyzer
     </Samples>
   </Analyzer>
   <Analyzer Identifier="SpecifyExportCodeRefactoringProviderAttributeName">
-    <Id>ROS0011</Id>
+    <Id>RCS9010</Id>
     <Title>Specify ExportCodeRefactoringProviderAttribute.Name.</Title>
     <MessageFormat>Specify ExportCodeRefactoringProviderAttribute.Name.</MessageFormat>
     <Category>Usage</Category>
@@ -240,7 +220,7 @@ class FooCodeRefactoringProvider : CodeRefactoringProvider
     </Samples>
   </Analyzer>
   <Analyzer Identifier="SpecifyExportCodeFixProviderAttributeName">
-    <Id>ROS0012</Id>
+    <Id>RCS9011</Id>
     <Title>Specify ExportCodeFixProviderAttribute.Name.</Title>
     <MessageFormat>Specify ExportCodeFixProviderAttribute.Name.</MessageFormat>
     <Category>Usage</Category>
@@ -258,6 +238,26 @@ class FooCodeFixProvider : CodeFixProvider
 class FooCodeFixProvider : CodeFixProvider
 {
 }]]></After>
+      </Sample>
+    </Samples>
+  </Analyzer>
+  <Analyzer Identifier="UsePropertySyntaxNodeRawKind">
+    <Id>RCS9012</Id>
+    <Title>Use property SyntaxNode.RawKind.</Title>
+    <MessageFormat>Use property SyntaxNode.RawKind.</MessageFormat>
+    <Category>Performance</Category>
+    <DefaultSeverity>Info</DefaultSeverity>
+    <IsEnabledByDefault>true</IsEnabledByDefault>
+    <SupportsFadeOut>false</SupportsFadeOut>
+    <SupportsFadeOutAnalyzer>false</SupportsFadeOutAnalyzer>
+    <Samples>
+      <Sample>
+        <Before><![CDATA[node1.Kind() == node2.Kind() // [|Id|]]]></Before>
+        <After><![CDATA[node1.RawKind == node2.RawKind]]></After>
+      </Sample>
+      <Sample>
+        <Before><![CDATA[node1.IsKind(node2.Kind()) // [|Id|]]]></Before>
+        <After><![CDATA[node1?.RawKind == node2.RawKind]]></After>
       </Sample>
     </Samples>
   </Analyzer>
