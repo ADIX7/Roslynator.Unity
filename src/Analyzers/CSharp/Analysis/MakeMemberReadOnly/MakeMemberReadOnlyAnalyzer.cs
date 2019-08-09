@@ -95,6 +95,16 @@ namespace Roslynator.CSharp.Analysis.MakeMemberReadOnly
                             if (skipField)
                                 break;
 
+                            if (memberDeclaration
+                                .DescendantNodes()
+                                .OfType<AttributeSyntax>()
+                                .Select(a => context.SemanticModel.GetSymbol(a)?.ToString())
+                                .Where(a => !(a is null))
+                                .Any(a => a.StartsWith("UnityEngine.SerializeField.")))
+                            {
+                                break;
+                            }
+
                             var fieldDeclaration = (FieldDeclarationSyntax)memberDeclaration;
 
                             foreach (VariableDeclaratorSyntax declarator in fieldDeclaration.Declaration.Variables)
